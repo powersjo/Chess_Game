@@ -26,11 +26,12 @@ public class ChessMenu extends JMenuBar {
 	/**
 	 * JMenu items.
 	 */
-	private JMenu menu, edit, help;
+	private JMenu menu, edit, help, player;
 	/**
 	 * Menu items to choose from.
 	 */
-	private JMenuItem exit, about, newGame, rules, undo;
+	private JMenuItem exit, about, newGame, rules, 
+	undo, save, load, singlePlayer, twoPlayer;
 	/**
 	 * Menu listener to add to items.
 	 */
@@ -43,6 +44,7 @@ public class ChessMenu extends JMenuBar {
 		menu = new JMenu("File");
 		edit = new JMenu("Edit");
 		help = new JMenu("Help");
+		player = new JMenu("Player");
 		exit = new JMenuItem("Exit");
 		exit.addActionListener(menuLis);
 		undo = new JMenuItem("Undo");
@@ -50,18 +52,31 @@ public class ChessMenu extends JMenuBar {
 		about.addActionListener(menuLis);
 		newGame = new JMenuItem("New");
 		newGame.addActionListener(menuLis);
+		singlePlayer = new JMenuItem("Single Player");
+		twoPlayer = new JMenuItem("Two Player");
+		singlePlayer.addActionListener(menuLis);
+		twoPlayer.addActionListener(menuLis);
 		rules = new JMenuItem("Rules");
 		rules.addActionListener(menuLis);
+		save = new JMenuItem("Save");
+		save.addActionListener(menuLis);
+		load = new JMenuItem("Load");
+		load.addActionListener(menuLis);
 		help.add(about);
 		help.add(rules);
+		player.add(singlePlayer);
+		player.add(twoPlayer);
 		help.getPopupMenu().setLightWeightPopupEnabled(false);
 		menu.add(newGame);
+		menu.add(save);
+		menu.add(load);
 		menu.add(exit);
 		menu.getPopupMenu().setLightWeightPopupEnabled(false);
 		edit.add(undo);
 		edit.getPopupMenu().setLightWeightPopupEnabled(false);
 		add(menu);
 		add(edit);
+		add(player);
 		add(help);
 	}
 	/**
