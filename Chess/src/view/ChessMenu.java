@@ -122,6 +122,8 @@ public class ChessMenu extends JMenuBar {
 				final int messageType = 1;
 				JOptionPane.showMessageDialog(null, displayString,
 						titleString, messageType);
+			} else if (source.equals(twoPlayer)) {
+				
 			}
         }
 	}
